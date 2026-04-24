@@ -66,13 +66,13 @@ function Step1({onNext}){
     <div style={S.uploadBox(!!profilePhoto)} onClick={()=>document.getElementById("profile-inp").click()}>
       {profilePhoto?<><div style={{fontSize:28}}>✅</div><p style={{color:"#f97316",fontSize:14}}>{profilePhoto.name}</p></>:<><div style={{fontSize:28}}>🤳</div><p style={{color:"#aaa",fontSize:14}}>Sua foto de perfil</p><p style={{color:"#555",fontSize:12}}>Aparece ao lado do texto Sobre você</p></>}
     </div>
-    <input id="profile-inp" type="file" accept="image/*" style={{display:"none"}} onChange={e=>setProfilePhoto(e.target.files[0]||null)}/>
+    <input id="profile-inp" type="file" accept="image/png,image/jpeg,image/jpg,image/webp" style={{display:"none"}} onChange={e=>setProfilePhoto(e.target.files[0]||null)}/>
 
     <label style={S.lbl}>Logo <span style={{color:"#555"}}>(opcional)</span></label>
     <div style={S.uploadBox(!!logo)} onClick={()=>document.getElementById("logo-inp").click()}>
       {logo?<><div style={{fontSize:28}}>✅</div><p style={{color:"#f97316",fontSize:14}}>{logo.name}</p></>:<><div style={{fontSize:28}}>🖼️</div><p style={{color:"#aaa",fontSize:14}}>Upload da logo</p></>}
     </div>
-    <input id="logo-inp" type="file" accept="image/*" style={{display:"none"}} onChange={e=>setLogo(e.target.files[0]||null)}/>
+    <input id="logo-inp" type="file" accept="image/png,image/jpeg,image/jpg,image/svg+xml,image/webp" style={{display:"none"}} onChange={e=>setLogo(e.target.files[0]||null)}/>
 
     <button style={S.btn} onClick={handle}>Próximo →</button>
   </div></div>;
