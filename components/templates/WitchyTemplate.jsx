@@ -6,7 +6,8 @@ export default function WitchyTemplate({ site }) {
   const c = content;
   const phone = (c.contact?.phone || "").replace(/\D/g, "");
   const waLink = phone ? `https://wa.me/55${phone}?text=${encodeURIComponent(c.contact?.whatsapp_message || "Olá!")}` : null;
-  const waCatalog = phone ? `https://wa.me/55${phone}?text=${encodeURIComponent("Olá! Gostaria de ver o catálogo completo de serviços.")}` : null;
+  const catalogLink = site.catalogLink || c.contact?.catalog_link || null;
+  const waCatalog = catalogLink || (phone ? `https://wa.me/55${phone}?text=${encodeURIComponent("Olá! Gostaria de ver o catálogo completo de serviços.")}` : null);
   const igHandle = (c.contact?.instagram || "").replace("@", "");
   const igLink = igHandle ? `https://instagram.com/${igHandle}` : null;
   const ttHandle = (c.contact?.tiktok || "").replace("@", "");
@@ -162,10 +163,7 @@ export default function WitchyTemplate({ site }) {
       <section className="wt-section" style={{ padding: "100px 56px", background: "rgba(100,20,80,0.06)", borderTop: "1px solid rgba(140,40,120,0.15)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, flexWrap: "wrap", gap: 16 }}>
-            <div>
-              <p style={{ fontFamily: "'Jost',sans-serif", fontSize: 11, letterSpacing: 5, textTransform: "uppercase", color: "#8c2878", marginBottom: 14 }}>Principais serviços</p>
-              <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(30px,4vw,50px)", fontWeight: 300, fontStyle: "italic", color: "#f0dcff" }}>Serviços</h2>
-            </div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(30px,4vw,50px)", fontWeight: 300, fontStyle: "italic", color: "#f0dcff" }}>Principais Serviços</h2>
             <div style={{ height: 1, flex: 1, maxWidth: 200, background: "linear-gradient(90deg,rgba(140,40,120,0.4),transparent)", alignSelf: "center" }} />
           </div>
           <ServicesGrid />
