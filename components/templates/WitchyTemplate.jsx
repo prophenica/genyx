@@ -163,7 +163,7 @@ export default function WitchyTemplate({ site }) {
       <section className="wt-section" style={{ padding: "100px 56px", background: "rgba(100,20,80,0.06)", borderTop: "1px solid rgba(140,40,120,0.15)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, flexWrap: "wrap", gap: 16 }}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(30px,4vw,50px)", fontWeight: 300, fontStyle: "italic", color: "#f0dcff", display: "flex", alignItems: "center", gap: 16 }}>Principais Serviços <span style={{ color: "#8c2878", fontSize: "0.7em" }}>✷</span></h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(30px,4vw,50px)", fontWeight: 300, fontStyle: "italic", color: "#f0dcff", display: "flex", alignItems: "center", gap: 16 }}>Principais Serviços <span style={{ color: "#8c2878", fontSize: "0.75em", marginLeft: 8 }}>✦</span></h2>
             <div style={{ height: 1, flex: 1, maxWidth: 200, background: "linear-gradient(90deg,rgba(140,40,120,0.4),transparent)", alignSelf: "center" }} />
           </div>
           <ServicesGrid />
