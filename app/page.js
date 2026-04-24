@@ -42,38 +42,35 @@ function Step1({onNext}){
 
     <label style={S.lbl}>Nome do negócio ou seu nome *</label>
     <input ref={nameRef} style={S.inp} placeholder="Ex: Studio Bella, Dr. Rafael Lima..." defaultValue=""/>
-
     <label style={S.lbl}>Profissão ou tipo de negócio *</label>
-    <input ref={profRef} style={S.inp} placeholder="Ex: Tarólogo, Nutricionista, Loja de roupas..." defaultValue=""/>
-
+    <input ref={profRef} style={S.inp} placeholder="Ex: Tarólogo, Nutricionista..." defaultValue=""/>
     <label style={S.lbl}>Cidade *</label>
     <input ref={cityRef} style={S.inp} placeholder="Ex: São Paulo - SP" defaultValue=""/>
-
     <label style={S.lbl}>Há quanto tempo você atende? <span style={{color:"#555"}}>(opcional)</span></label>
-    <input ref={yearsRef} style={S.inp} placeholder="Ex: 2 anos, 6 meses, 5 anos..." defaultValue=""/>
+    <input ref={yearsRef} style={S.inp} placeholder="Ex: 2 anos, 6 meses..." defaultValue=""/>
 
     <label style={{...S.lbl,marginTop:20}}>Você é... *</label>
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:4}}>
-      <button style={S.ob(businessType==="solo")} onClick={()=>setBusinessType("solo")}><span style={{fontSize:28}}>🧑</span><span>Profissional solo</span><span style={{fontSize:11,color:"#666"}}>Eu mesmo atendo</span></button>
-      <button style={S.ob(businessType==="business")} onClick={()=>setBusinessType("business")}><span style={{fontSize:28}}>🏢</span><span>Empresa / equipe</span><span style={{fontSize:11,color:"#666"}}>Temos uma equipe</span></button>
+      <button style={S.ob(businessType==="solo")} onClick={()=>setBusinessType("solo")}><span style={{fontSize:28}}>🧑</span><span>Profissional solo</span></button>
+      <button style={S.ob(businessType==="business")} onClick={()=>setBusinessType("business")}><span style={{fontSize:28}}>🏢</span><span>Empresa / equipe</span></button>
     </div>
 
     <label style={{...S.lbl,marginTop:20}}>Seu negócio é... *</label>
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:4}}>
-      <button style={S.ob(locationType==="online")} onClick={()=>setLocationType("online")}><span style={{fontSize:28}}>🌐</span><span>100% Online</span><span style={{fontSize:11,color:"#666"}}>Atendo remotamente</span></button>
-      <button style={S.ob(locationType==="physical")} onClick={()=>setLocationType("physical")}><span style={{fontSize:28}}>📍</span><span>Presencial</span><span style={{fontSize:11,color:"#666"}}>Tenho espaço físico</span></button>
+      <button style={S.ob(locationType==="online")} onClick={()=>setLocationType("online")}><span style={{fontSize:28}}>🌐</span><span>100% Online</span></button>
+      <button style={S.ob(locationType==="physical")} onClick={()=>setLocationType("physical")}><span style={{fontSize:28}}>📍</span><span>Presencial</span></button>
     </div>
-    <button style={{...S.ob(locationType==="hybrid"),marginTop:8,width:"100%"}} onClick={()=>setLocationType("hybrid")}><span style={{fontSize:24}}>🔀</span><span>Híbrido (online + presencial)</span></button>
+    <button style={{...S.ob(locationType==="hybrid"),marginTop:8,width:"100%"}} onClick={()=>setLocationType("hybrid")}><span style={{fontSize:24}}>🔀</span><span>Híbrido</span></button>
 
-    <label style={{...S.lbl,marginTop:20}}>Foto de perfil <span style={{color:"#555"}}>(aparece no Sobre — recomendado)</span></label>
+    <label style={{...S.lbl,marginTop:20}}>Foto de perfil <span style={{color:"#555"}}>(aparece no Sobre)</span></label>
     <div style={S.uploadBox(!!profilePhoto)} onClick={()=>document.getElementById("profile-inp").click()}>
-      {profilePhoto?<><div style={{fontSize:28,marginBottom:6}}>✅</div><p style={{color:"#f97316",fontSize:14}}>{profilePhoto.name}</p><p style={{color:"#555",fontSize:12}}>Clique para trocar</p></>:<><div style={{fontSize:28,marginBottom:6}}>🤳</div><p style={{color:"#aaa",fontSize:14}}>Sua foto de perfil</p><p style={{color:"#555",fontSize:12}}>Aparece ao lado do texto Sobre você</p></>}
+      {profilePhoto?<><div style={{fontSize:28}}>✅</div><p style={{color:"#f97316",fontSize:14}}>{profilePhoto.name}</p></>:<><div style={{fontSize:28}}>🤳</div><p style={{color:"#aaa",fontSize:14}}>Sua foto de perfil</p></>}
     </div>
     <input id="profile-inp" type="file" accept="image/*" style={{display:"none"}} onChange={e=>setProfilePhoto(e.target.files[0]||null)}/>
 
-    <label style={{...S.lbl,marginTop:8}}>Logo <span style={{color:"#555"}}>(opcional)</span></label>
+    <label style={{...S.lbl}}>Logo <span style={{color:"#555"}}>(opcional)</span></label>
     <div style={S.uploadBox(!!logo)} onClick={()=>document.getElementById("logo-inp").click()}>
-      {logo?<><div style={{fontSize:28,marginBottom:6}}>✅</div><p style={{color:"#f97316",fontSize:14}}>{logo.name}</p><p style={{color:"#555",fontSize:12}}>Clique para trocar</p></>:<><div style={{fontSize:28,marginBottom:6}}>🖼️</div><p style={{color:"#aaa",fontSize:14}}>Upload da logo</p><p style={{color:"#555",fontSize:12}}>PNG, JPG ou SVG</p></>}
+      {logo?<><div style={{fontSize:28}}>✅</div><p style={{color:"#f97316",fontSize:14}}>{logo.name}</p></>:<><div style={{fontSize:28}}>🖼️</div><p style={{color:"#aaa",fontSize:14}}>Upload da logo</p></>}
     </div>
     <input id="logo-inp" type="file" accept="image/*" style={{display:"none"}} onChange={e=>setLogo(e.target.files[0]||null)}/>
 
@@ -82,25 +79,24 @@ function Step1({onNext}){
 }
 
 function Step2({onNext,onBack,formData}){
-  const servRef=useRef();const difRef=useRef();const extraRef=useRef();const addressRef=useRef();
+  const difRef=useRef();const extraRef=useRef();const addressRef=useRef();const aboutRef=useRef();
   const [photos,setPhotos]=useState([]);
   const [galleryPos,setGalleryPos]=useState("after_services");
   const [sessionCount,setSessionCount]=useState("");
   const [useEstimate,setUseEstimate]=useState(false);
+  const [heroPhotoIndex,setHeroPhotoIndex]=useState(0);
   const [services,setServices]=useState([
     {name:"",price:"",description:""},
     {name:"",price:"",description:""},
     {name:"",price:"",description:""},
   ]);
 
-  function updateService(i,field,val){
-    setServices(prev=>{const n=[...prev];n[i]={...n[i],[field]:val};return n;});
-  }
+  function updateService(i,field,val){setServices(prev=>{const n=[...prev];n[i]={...n[i],[field]:val};return n;});}
 
   const serviceLabels=[
-    {namePh:"Serviço entry — menor valor",pricePh:"Ex: R$80",descPh:"Descrição opcional..."},
-    {namePh:"Serviço carro-chefe — mais vendido ⭐",pricePh:"Ex: R$150",descPh:"Descrição opcional..."},
-    {namePh:"Serviço premium — maior valor",pricePh:"Ex: R$300",descPh:"Descrição opcional..."},
+    {namePh:"Serviço entry — menor valor",pricePh:"Ex: R$80"},
+    {namePh:"Serviço carro-chefe — mais vendido ⭐",pricePh:"Ex: R$150"},
+    {namePh:"Serviço premium — maior valor",pricePh:"Ex: R$300"},
   ];
 
   async function handle(){
@@ -111,6 +107,8 @@ function Step2({onNext,onBack,formData}){
       extra:extraRef.current.value,
       address:addressRef.current?.value||"",
       sessionCount:useEstimate?"estimate":sessionCount,
+      aboutText:aboutRef.current?.value||"",
+      heroPhotoIndex,
     };
     if(!v.services||!v.diferencial){alert("Preencha pelo menos 1 serviço e seu diferencial");return;}
     if(photos.length>0){
@@ -123,32 +121,34 @@ function Step2({onNext,onBack,formData}){
   return <div style={S.page}><div style={S.card}>
     <button onClick={onBack} style={{background:"none",border:"1px solid #2a2a3a",borderRadius:8,color:"#888",padding:"8px 14px",fontSize:13,cursor:"pointer",marginBottom:24}}>← Voltar</button>
     <p style={{color:"#f97316",fontSize:13,fontWeight:600,marginBottom:8}}>Passo 2 de 3</p>
-    <h2 style={{fontSize:22,fontWeight:700,marginBottom:20,color:"#f1f1f1"}}>Seus serviços</h2>
+    <h2 style={{fontSize:22,fontWeight:700,marginBottom:20,color:"#f1f1f1"}}>Serviços e sobre você</h2>
 
     {services.map((s,i)=>(
       <div key={i} style={{background:"#111",border:"1px solid #2a2a3a",borderRadius:12,padding:16,marginBottom:12}}>
         <p style={{color:"#f97316",fontSize:11,fontWeight:600,letterSpacing:2,textTransform:"uppercase",marginBottom:10}}>{serviceLabels[i].namePh}</p>
         <input style={{...S.inp,marginBottom:8}} placeholder="Nome do serviço" value={s.name} onChange={e=>updateService(i,"name",e.target.value)}/>
         <input style={{...S.inp,marginBottom:8}} placeholder={serviceLabels[i].pricePh} value={s.price} onChange={e=>updateService(i,"price",e.target.value)}/>
-        <textarea style={{...S.inp,height:60,resize:"vertical",marginBottom:0}} placeholder={serviceLabels[i].descPh} value={s.description} onChange={e=>updateService(i,"description",e.target.value)}/>
+        <textarea style={{...S.inp,height:60,resize:"vertical",marginBottom:0}} placeholder="Descrição opcional..." value={s.description} onChange={e=>updateService(i,"description",e.target.value)}/>
       </div>
     ))}
 
     <label style={S.lbl}>Seu maior diferencial *</label>
     <textarea ref={difRef} style={{...S.inp,height:80,resize:"vertical"}} placeholder="Ex: 8 anos de experiência, método exclusivo..." defaultValue=""/>
 
+    <label style={S.lbl}>Sobre você <span style={{color:"#555"}}>(opcional — deixe em branco para a IA gerar)</span></label>
+    <textarea ref={aboutRef} style={{...S.inp,height:100,resize:"vertical"}} placeholder="Escreva sobre você, sua história, sua missão... ou deixe em branco e a IA cria para você." defaultValue=""/>
+
     <label style={S.lbl}>Quantos atendimentos você já realizou? <span style={{color:"#555"}}>(opcional)</span></label>
     <div style={{display:"flex",gap:8,marginBottom:12,alignItems:"center"}}>
-      <input style={{...S.inp,marginBottom:0,flex:1}} placeholder="Ex: 200, 500, 1000..." value={sessionCount} onChange={e=>{setSessionCount(e.target.value);setUseEstimate(false);}} disabled={useEstimate}/>
+      <input style={{...S.inp,marginBottom:0,flex:1}} placeholder="Ex: 200, 500..." value={sessionCount} onChange={e=>{setSessionCount(e.target.value);setUseEstimate(false);}} disabled={useEstimate}/>
       <button onClick={()=>{setUseEstimate(p=>!p);if(!useEstimate)setSessionCount("");}} style={{...S.obRow(useEstimate),width:"auto",whiteSpace:"nowrap",padding:"12px 16px",flexShrink:0}}>
         {useEstimate?"✅":"🤖"} Estimar
       </button>
     </div>
-    {useEstimate&&<p style={{color:"#555",fontSize:12,marginTop:-8,marginBottom:12}}>A IA vai estimar com base no seu tempo de atuação</p>}
 
     {formData?.locationType!=="online"&&<>
       <label style={S.lbl}>Endereço ou região <span style={{color:"#555"}}>(opcional)</span></label>
-      <input ref={addressRef} style={S.inp} placeholder="Ex: Pinheiros, SP — Rua X, 123" defaultValue=""/>
+      <input ref={addressRef} style={S.inp} placeholder="Ex: Pinheiros, SP" defaultValue=""/>
     </>}
 
     <label style={S.lbl}>Informações extras <span style={{color:"#555"}}>(opcional)</span></label>
@@ -156,7 +156,7 @@ function Step2({onNext,onBack,formData}){
 
     <label style={{...S.lbl,marginTop:16}}>Fotos do trabalho <span style={{color:"#555"}}>(opcional — até 8)</span></label>
     <div style={S.uploadBox(photos.length>0)} onClick={()=>document.getElementById("photos-inp").click()}>
-      {photos.length>0?<><div style={{fontSize:24,marginBottom:4}}>📸</div><p style={{color:"#f97316",fontSize:14}}>{photos.length} foto{photos.length>1?"s":""} adicionada{photos.length>1?"s":""}</p></>:<><div style={{fontSize:28,marginBottom:6}}>📸</div><p style={{color:"#aaa",fontSize:14}}>Fotos do seu trabalho</p><p style={{color:"#555",fontSize:12}}>Aparecem em galeria no site</p></>}
+      {photos.length>0?<><div style={{fontSize:24}}>📸</div><p style={{color:"#f97316",fontSize:14}}>{photos.length} foto{photos.length>1?"s":""} adicionada{photos.length>1?"s":""}</p></>:<><div style={{fontSize:28}}>📸</div><p style={{color:"#aaa",fontSize:14}}>Fotos do seu trabalho</p></>}
     </div>
     <input id="photos-inp" type="file" accept="image/*" multiple style={{display:"none"}} onChange={e=>setPhotos(p=>[...p,...Array.from(e.target.files)].slice(0,8))}/>
 
@@ -169,6 +169,20 @@ function Step2({onNext,onBack,formData}){
           </span>
         ))}
       </div>
+
+      <label style={S.lbl}>Qual foto aparece no hero? (lado direito da página)</label>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,marginBottom:12}}>
+        {photos.map((f,i)=>{
+          const url=URL.createObjectURL(f);
+          return(
+            <div key={i} onClick={()=>setHeroPhotoIndex(i)} style={{position:"relative",cursor:"pointer",borderRadius:8,overflow:"hidden",border:heroPhotoIndex===i?"2px solid #f97316":"2px solid transparent"}}>
+              <img src={url} style={{width:"100%",height:70,objectFit:"cover",display:"block"}}/>
+              {heroPhotoIndex===i&&<div style={{position:"absolute",top:4,right:4,background:"#f97316",borderRadius:"50%",width:20,height:20,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,color:"#fff"}}>✓</div>}
+            </div>
+          );
+        })}
+      </div>
+
       <label style={S.lbl}>Onde aparece a galeria?</label>
       {GALLERY_POSITIONS.map(p=>(
         <button key={p.id} style={{...S.obRow(galleryPos===p.id),marginBottom:6}} onClick={()=>setGalleryPos(p.id)}>
@@ -281,7 +295,20 @@ export default function Home(){
 
   if(step===4&&preview){
     const TemplateComp=getTemplate(preview.theme);
-    const fakesite={name:preview.form.name,profession:preview.form.profession,content:preview.content,theme:preview.theme,logo:preview.form.logo,gallery:preview.form.gallery,gallery_position:preview.form.gallery_position,profilePhoto:preview.form.profilePhoto,socials:preview.form.socials,activeSocials:preview.form.activeSocials,servicesData:preview.form.servicesData};
+    const fakesite={
+      name:preview.form.name,
+      profession:preview.form.profession,
+      content:preview.content,
+      theme:preview.theme,
+      logo:preview.form.logo,
+      gallery:preview.form.gallery,
+      gallery_position:preview.form.gallery_position,
+      profilePhoto:preview.form.profilePhoto,
+      heroPhotoIndex:preview.form.heroPhotoIndex||0,
+      socials:preview.form.socials,
+      activeSocials:preview.form.activeSocials,
+      servicesData:preview.form.servicesData
+    };
     return <div style={{minHeight:"100vh",background:"#0a0a0f"}}>
       <div style={{background:"#0f0f1a",borderBottom:"1px solid #1a1a2e",padding:"12px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:10,position:"sticky",top:0,zIndex:200,fontFamily:"system-ui"}}>
         <div style={{display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}>
