@@ -13,8 +13,8 @@ export default function WitchyTemplate({ site }) {
   const ttHandle = (c.contact?.tiktok || "").replace("@", "");
   const ttLink = ttHandle ? `https://tiktok.com/@${ttHandle}` : null;
   const primaryLink = waLink || igLink || ttLink || "#";
-  const heroPhoto = gallery && gallery.length > 0 ? gallery[heroPhotoIndex || 0] : null;
-  const remainingGallery = gallery ? gallery.filter((_, i) => i !== (heroPhotoIndex || 0)) : [];
+  const heroPhoto = gallery && gallery.length > 0 ? gallery[0] : null;
+  const remainingGallery = gallery && gallery.length > 1 ? gallery.slice(1) : [];
   const schema = { "@context": "https://schema.org", "@type": "LocalBusiness", "name": c.seo?.schema_name || name, "description": c.seo?.schema_description || "", "telephone": c.seo?.schema_phone || "" };
   const total = c.services.length;
   const hasOrphan = total % 3 === 1 && total > 3;
@@ -163,7 +163,7 @@ export default function WitchyTemplate({ site }) {
       <section className="wt-section" style={{ padding: "100px 56px", background: "rgba(100,20,80,0.06)", borderTop: "1px solid rgba(140,40,120,0.15)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, flexWrap: "wrap", gap: 16 }}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(30px,4vw,50px)", fontWeight: 300, fontStyle: "italic", color: "#f0dcff" }}>Principais Serviços</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(30px,4vw,50px)", fontWeight: 300, fontStyle: "italic", color: "#f0dcff", display: "flex", alignItems: "center", gap: 16 }}>Principais Serviços <span style={{ color: "#8c2878", fontSize: "0.7em" }}>✷</span></h2>
             <div style={{ height: 1, flex: 1, maxWidth: 200, background: "linear-gradient(90deg,rgba(140,40,120,0.4),transparent)", alignSelf: "center" }} />
           </div>
           <ServicesGrid />
@@ -194,7 +194,7 @@ export default function WitchyTemplate({ site }) {
                 <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 44, color: "rgba(140,40,120,0.3)", lineHeight: 1, marginBottom: 4 }}>❝</div>
                 <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 16, fontStyle: "italic", color: "rgba(237,224,247,0.65)", lineHeight: 1.85, marginBottom: 24 }}>{t.text}</p>
                 <p style={{ fontFamily: "'Jost',sans-serif", fontSize: 13, fontWeight: 500, color: "#e8c0f0" }}>{t.name}</p>
-                <p style={{ fontFamily: "'Jost',sans-serif", fontSize: 12, color: "rgba(140,40,120,0.7)", marginTop: 4 }}>{t.role}{t.city ? ` · ${t.city}` : ""}</p>
+                {t.city && <p style={{ fontFamily: "'Jost',sans-serif", fontSize: 12, color: "rgba(140,40,120,0.7)", marginTop: 4 }}>{t.city}</p>}
               </div>
             ))}
           </div>
