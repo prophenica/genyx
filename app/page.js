@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import VolumetricBackground from "@/components/VolumetricBackground";
+import BeamsBackground from "@/components/BeamsBackground";
 import { TEMPLATES, getTemplate } from "@/components/templates";
 
 const TONS=[{id:"profissional",label:"Sério e profissional",icon:"👔"},{id:"amigavel",label:"Amigável e próximo",icon:"😊"},{id:"luxo",label:"Luxo e exclusividade",icon:"✨"},{id:"descontraido",label:"Jovem e descontraído",icon:"🎉"}];
@@ -36,7 +36,7 @@ function Step1({onNext}){
     onNext(v);
   }
 
-  return <VolumetricBackground><div style={{...S.page, background:"transparent"}}><div style={S.card}>
+  return <BeamsBackground><div style={{...S.page, background:"transparent"}}><div style={S.card}>
     <div style={{display:"inline-block",background:"rgba(249,115,22,0.12)",border:"1px solid rgba(249,115,22,0.3)",borderRadius:99,padding:"5px 16px",fontSize:13,color:"#fb923c",marginBottom:24}}>✦ Criador de Sites com IA</div>
     <h1 style={{fontSize:"clamp(26px,5vw,42px)",fontWeight:800,lineHeight:1.2,marginBottom:12,color:"#f1f1f1"}}>Seu site profissional<br/><span style={{color:"#f97316"}}>em minutos</span></h1>
     <p style={{color:"#777",fontSize:15,lineHeight:1.7,marginBottom:28}}>Responda algumas perguntas e nossa IA cria um site completo e personalizado.</p>
@@ -76,7 +76,7 @@ function Step1({onNext}){
     <input id="logo-inp" type="file" accept="image/png,image/jpeg,image/jpg,image/svg+xml,image/webp" style={{display:"none"}} onChange={e=>setLogo(e.target.files[0]||null)}/>
 
     <button style={S.btn} onClick={handle}>Próximo →</button>
-  </div></div></VolumetricBackground>;
+  </div></div></BeamsBackground>;
 }
 
 function Step2({onNext,onBack,formData}){
@@ -140,7 +140,7 @@ function Step2({onNext,onBack,formData}){
     onNext(v);
   }
 
-  return <VolumetricBackground><div style={{...S.page, background:"transparent"}}><div style={S.card}>
+  return <BeamsBackground><div style={{...S.page, background:"transparent"}}><div style={S.card}>
     <button onClick={onBack} style={{background:"none",border:"1px solid #2a2a3a",borderRadius:8,color:"#888",padding:"8px 14px",fontSize:13,cursor:"pointer",marginBottom:24}}>← Voltar</button>
     <p style={{color:"#f97316",fontSize:13,fontWeight:600,marginBottom:8}}>Passo 2 de 3</p>
     <h2 style={{fontSize:22,fontWeight:700,marginBottom:20,color:"#f1f1f1"}}>Serviços e sobre você</h2>
@@ -208,7 +208,7 @@ function Step2({onNext,onBack,formData}){
     </>}
 
     <button style={S.btn} onClick={handle}>Próximo →</button>
-  </div></div></VolumetricBackground>;
+  </div></div></BeamsBackground>;
 }
 
 function Step3({onNext,onBack}){
@@ -223,7 +223,7 @@ function Step3({onNext,onBack}){
     if(activeSocials.includes("whatsapp")&&!socials.whatsapp){alert("Preencha o número do WhatsApp");return;}
     onNext({tone,audience,theme,socials,activeSocials});
   }
-  return <VolumetricBackground><div style={{...S.page, background:"transparent"}}><div style={S.card}>
+  return <BeamsBackground><div style={{...S.page, background:"transparent"}}><div style={S.card}>
     <button onClick={onBack} style={{background:"none",border:"1px solid #2a2a3a",borderRadius:8,color:"#888",padding:"8px 14px",fontSize:13,cursor:"pointer",marginBottom:24}}>← Voltar</button>
     <p style={{color:"#f97316",fontSize:13,fontWeight:600,marginBottom:8}}>Passo 3 de 3</p>
     <h2 style={{fontSize:22,fontWeight:700,marginBottom:20,color:"#f1f1f1"}}>Estilo e contato</h2>
@@ -263,7 +263,7 @@ function Step3({onNext,onBack}){
     ))}
 
     <button style={{...S.btn,marginTop:20}} onClick={handle}>✨ Gerar prévia do site</button>
-  </div></div></VolumetricBackground>;
+  </div></div></BeamsBackground>;
 }
 
 export default function Home(){
