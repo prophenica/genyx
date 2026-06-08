@@ -8,7 +8,7 @@ const AUDIENCES=[{id:"jovens",label:"Jovens (18–30)",icon:"🧑"},{id:"adultos
 const GALLERY_POSITIONS=[{id:"after_services",label:"Após os serviços"},{id:"after_about",label:"Após o sobre"},{id:"before_cta",label:"Antes do botão final"}];
 const SOCIALS=[{id:"whatsapp",label:"WhatsApp",icon:"💬",placeholder:"(11) 99999-0000"},{id:"instagram",label:"Instagram",icon:"📸",placeholder:"@seuperfil"},{id:"tiktok",label:"TikTok",icon:"🎵",placeholder:"@seuperfil"},{id:"facebook",label:"Facebook",icon:"👥",placeholder:"facebook.com/suapagina"},{id:"email",label:"E-mail",icon:"✉️",placeholder:"seu@email.com"}];
 
-const GF = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;500;600&display=swap');`;
+const GF = `@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500&family=Syne:wght@300;400;500&display=swap');`;
 
 const S={
   page:{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:"40px 16px",fontFamily:"'Jost',system-ui,sans-serif"},
@@ -29,7 +29,7 @@ function Landing({onStart}){
       <style>{GF}</style>
       <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"40px 24px",textAlign:"center"}}>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:5,textTransform:"uppercase",color:"rgba(180,120,200,0.7)",marginBottom:32}}>✦ Powered by IA</p>
-        <h1 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(42px,8vw,88px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",lineHeight:1.1,marginBottom:24,maxWidth:700}}>
+        <h1 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(42px,8vw,88px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",lineHeight:1.1,marginBottom:24,maxWidth:700}}>
           Seu site nasce hoje
         </h1>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:16,color:"rgba(200,160,220,0.6)",maxWidth:420,lineHeight:1.8,fontWeight:300,marginBottom:48}}>
@@ -71,7 +71,7 @@ function Step1({onNext}){
       <style>{GF}</style>
       <div style={S.page}><div style={S.card}>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:20}}>Passo 1 de 3</p>
-        <h2 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(28px,5vw,42px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:28,lineHeight:1.2}}>Sobre você</h2>
+        <h2 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(28px,5vw,42px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:28,lineHeight:1.2}}>Sobre você</h2>
 
         <label style={S.lbl}>Nome do negócio ou seu nome *</label>
         <input ref={nameRef} style={S.inp} placeholder="Ex: Studio Bella, Dra. Ana Lima..." defaultValue=""/>
@@ -150,7 +150,7 @@ function Step2({onNext,onBack,formData}){
       <div style={S.page}><div style={S.card}>
         <button onClick={onBack} style={{background:"none",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,color:"rgba(200,160,220,0.5)",padding:"8px 18px",fontSize:12,cursor:"pointer",marginBottom:24,letterSpacing:1,fontFamily:"'Cormorant Garamond',sans-serif"}}>← Voltar</button>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:12}}>Passo 2 de 3</p>
-        <h2 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Serviços e sobre você</h2>
+        <h2 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Serviços e sobre você</h2>
 
         {services.map((s,i)=>(
           <div key={i} style={{background:"rgba(140,40,120,0.06)",border:"1px solid rgba(140,40,120,0.2)",borderRadius:12,padding:16,marginBottom:12}}>
@@ -237,7 +237,7 @@ function Step3({onNext,onBack}){
       <div style={S.page}><div style={S.card}>
         <button onClick={onBack} style={{background:"none",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,color:"rgba(200,160,220,0.5)",padding:"8px 18px",fontSize:12,cursor:"pointer",marginBottom:24,letterSpacing:1,fontFamily:"'Cormorant Garamond',sans-serif"}}>← Voltar</button>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:12}}>Passo 3 de 3</p>
-        <h2 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Estilo e contato</h2>
+        <h2 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Estilo e contato</h2>
 
         <label style={{...S.lbl,marginBottom:10}}>Tom de comunicação *</label>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:16}}>
@@ -319,7 +319,7 @@ export default function Home(){
     <BeamsBackground>
       <style>{GF}</style>
       <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:16,fontFamily:"'Cormorant Garamond',sans-serif"}}>
-        {loading&&<><div style={{fontFamily:"'Syne',sans-serif",fontSize:64,color:"rgba(140,40,120,0.6)"}}>✦</div><p style={{color:"#c080d0",fontSize:16,letterSpacing:2,textTransform:"uppercase"}}>Conjurando seu site...</p><p style={{color:"rgba(140,40,120,0.5)",fontSize:13,letterSpacing:1}}>Isso pode levar até 1 minuto</p></>}
+        {loading&&<><div style={{fontFamily:"'Cinzel',serif",fontSize:64,color:"rgba(140,40,120,0.6)"}}>✦</div><p style={{color:"#c080d0",fontSize:16,letterSpacing:2,textTransform:"uppercase"}}>Conjurando seu site...</p><p style={{color:"rgba(140,40,120,0.5)",fontSize:13,letterSpacing:1}}>Isso pode levar até 1 minuto</p></>}
         {!loading&&<Step3 onNext={handleStep3} onBack={()=>setStep(2)}/>}
         {error&&<div style={{position:"fixed",bottom:20,left:20,right:20,background:"rgba(120,10,40,0.9)",border:"1px solid rgba(180,40,80,0.5)",borderRadius:8,padding:"12px 16px",color:"#fca5a5",fontSize:14}}>⚠️ {error}</div>}
       </div>
