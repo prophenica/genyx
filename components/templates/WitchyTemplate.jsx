@@ -65,7 +65,9 @@ export default function WitchyTemplate({ site }) {
   }
 
   return (
-    <div style={{ fontFamily: "system-ui,sans-serif", background: "#100818", color: "#ede0f7", minHeight: "100vh", overflowX: "hidden" }}><style>{`@keyframes twinkle{0%,100%{opacity:0.15;}50%{opacity:0.9;}}.wt-star{position:fixed;border-radius:50%;background:#fff;pointer-events:none;animation:twinkle linear infinite;z-index:0;}`}</style>
+    <div style={{ fontFamily: "system-ui,sans-serif", background: "#100818", color: "#ede0f7", minHeight: "100vh", overflowX: "hidden" }}>
+      <style>{`@keyframes twinkle{0%,100%{opacity:0.15;}50%{opacity:0.9;}}.wt-star{position:fixed;border-radius:50%;background:#fff;pointer-events:none;animation:twinkle linear infinite;z-index:0;}`}</style>
+      {[...Array(80)].map((_,i)=>(<div key={i} className="wt-star" style={{width:i%3===0?2:1,height:i%3===0?2:1,left:`${(i*137.5)%100}%`,top:`${(i*97.3)%100}%`,animationDuration:`${2+(i%5)}s`,animationDelay:`${(i*0.3)%5}s`,opacity:0.1+(i%4)*0.1}}/>))}<style>{`@keyframes twinkle{0%,100%{opacity:0.15;}50%{opacity:0.9;}}.wt-star{position:fixed;border-radius:50%;background:#fff;pointer-events:none;animation:twinkle linear infinite;z-index:0;}`}</style>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
         .wt-btn-main:hover{background:#5c1a4a!important;transform:translateY(-2px);box-shadow:0 12px 40px rgba(140,40,120,0.45)!important}
