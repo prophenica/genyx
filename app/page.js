@@ -30,7 +30,7 @@ function Landing({onStart}){
       <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"40px 24px",textAlign:"center"}}>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:5,textTransform:"uppercase",color:"rgba(180,120,200,0.7)",marginBottom:32}}>✦ Powered by IA</p>
         <h1 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(42px,8vw,88px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",lineHeight:1.1,marginBottom:24,maxWidth:700}}>
-          Seu site nasce hoje
+          Seu universo online se inicia aqui
         </h1>
         <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:16,color:"rgba(200,160,220,0.6)",maxWidth:420,lineHeight:1.8,fontWeight:300,marginBottom:48}}>
           Responda algumas perguntas e nossa IA cria um site completo, elegante e pronto pra atrair a atenção que você merece.
