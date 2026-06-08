@@ -28,22 +28,22 @@ function Landing({onStart}){
     <BeamsBackground>
       <style>{GF}</style>
       <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"40px 24px",textAlign:"center"}}>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:11,letterSpacing:5,textTransform:"uppercase",color:"rgba(180,120,200,0.7)",marginBottom:32}}>✦ Powered by IA</p>
-        <h1 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(42px,8vw,88px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",lineHeight:1.1,marginBottom:24,maxWidth:700}}>
+        <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:5,textTransform:"uppercase",color:"rgba(180,120,200,0.7)",marginBottom:32}}>✦ Powered by IA</p>
+        <h1 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(42px,8vw,88px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",lineHeight:1.1,marginBottom:24,maxWidth:700}}>
           Seu site nasce hoje
         </h1>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:16,color:"rgba(200,160,220,0.6)",maxWidth:420,lineHeight:1.8,fontWeight:300,marginBottom:48}}>
+        <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:16,color:"rgba(200,160,220,0.6)",maxWidth:420,lineHeight:1.8,fontWeight:300,marginBottom:48}}>
           Responda algumas perguntas e nossa IA cria um site completo, elegante e pronto pra atrair a atenção que você merece.
         </p>
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:16,marginBottom:48}}>
-          <button onClick={onStart} style={{fontFamily:"'Syne',sans-serif",background:"linear-gradient(135deg,#7a1f68,#8c2878)",color:"#fff",border:"none",borderRadius:99,padding:"18px 52px",fontSize:14,letterSpacing:2,textTransform:"uppercase",cursor:"pointer",fontWeight:400}}>
+          <button onClick={onStart} style={{fontFamily:"'Cormorant Garamond',sans-serif",background:"linear-gradient(135deg,#7a1f68,#8c2878)",color:"#fff",border:"none",borderRadius:99,padding:"18px 52px",fontSize:14,letterSpacing:2,textTransform:"uppercase",cursor:"pointer",fontWeight:400}}>
             Criar meu site
           </button>
-          <p style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:"rgba(140,40,120,0.6)",letterSpacing:1}}>R$ 197 · pagamento único · sem mensalidade</p>
+          <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:12,color:"rgba(140,40,120,0.6)",letterSpacing:1}}>R$ 197 · pagamento único · sem mensalidade</p>
         </div>
         <div style={{display:"flex",gap:40,flexWrap:"wrap",justifyContent:"center"}}>
           {["✦ Site completo em minutos","✦ Design exclusivo por IA","✦ Sem mensalidade"].map(t=>(
-            <span key={t} style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:"rgba(180,120,200,0.4)",letterSpacing:1}}>{t}</span>
+            <span key={t} style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:12,color:"rgba(180,120,200,0.4)",letterSpacing:1}}>{t}</span>
           ))}
         </div>
       </div>
@@ -70,8 +70,8 @@ function Step1({onNext}){
     <BeamsBackground>
       <style>{GF}</style>
       <div style={S.page}><div style={S.card}>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:20}}>Passo 1 de 3</p>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,5vw,42px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:28,lineHeight:1.2}}>Sobre você</h2>
+        <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:20}}>Passo 1 de 3</p>
+        <h2 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(28px,5vw,42px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:28,lineHeight:1.2}}>Sobre você</h2>
 
         <label style={S.lbl}>Nome do negócio ou seu nome *</label>
         <input ref={nameRef} style={S.inp} placeholder="Ex: Studio Bella, Dra. Ana Lima..." defaultValue=""/>
@@ -148,13 +148,13 @@ function Step2({onNext,onBack,formData}){
     <BeamsBackground>
       <style>{GF}</style>
       <div style={S.page}><div style={S.card}>
-        <button onClick={onBack} style={{background:"none",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,color:"rgba(200,160,220,0.5)",padding:"8px 18px",fontSize:12,cursor:"pointer",marginBottom:24,letterSpacing:1,fontFamily:"'Syne',sans-serif"}}>← Voltar</button>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:12}}>Passo 2 de 3</p>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Serviços e sobre você</h2>
+        <button onClick={onBack} style={{background:"none",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,color:"rgba(200,160,220,0.5)",padding:"8px 18px",fontSize:12,cursor:"pointer",marginBottom:24,letterSpacing:1,fontFamily:"'Cormorant Garamond',sans-serif"}}>← Voltar</button>
+        <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:12}}>Passo 2 de 3</p>
+        <h2 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Serviços e sobre você</h2>
 
         {services.map((s,i)=>(
           <div key={i} style={{background:"rgba(140,40,120,0.06)",border:"1px solid rgba(140,40,120,0.2)",borderRadius:12,padding:16,marginBottom:12}}>
-            <p style={{color:"rgba(140,40,120,0.7)",fontSize:10,fontWeight:500,letterSpacing:2,textTransform:"uppercase",marginBottom:10,fontFamily:"'Syne',sans-serif"}}>{serviceLabels[i].namePh}</p>
+            <p style={{color:"rgba(140,40,120,0.7)",fontSize:10,fontWeight:500,letterSpacing:2,textTransform:"uppercase",marginBottom:10,fontFamily:"'Cormorant Garamond',sans-serif"}}>{serviceLabels[i].namePh}</p>
             <input style={{...S.inp,marginBottom:8}} placeholder="Nome do serviço" value={s.name} onChange={e=>updateService(i,"name",e.target.value)}/>
             <input style={{...S.inp,marginBottom:8}} placeholder={serviceLabels[i].pricePh} value={s.price} onChange={e=>updateService(i,"price",e.target.value)}/>
             <textarea style={{...S.inp,height:60,resize:"vertical",marginBottom:0}} placeholder="Descrição opcional..." value={s.description} onChange={e=>updateService(i,"description",e.target.value)}/>
@@ -169,7 +169,7 @@ function Step2({onNext,onBack,formData}){
 
         <label style={S.lbl}>Link do catálogo completo <span style={{opacity:0.4}}>(opcional)</span></label>
         <input ref={catalogRef} style={S.inp} placeholder="WhatsApp Business, Hotmart, Notion..." defaultValue=""/>
-        <p style={{color:"rgba(140,40,120,0.4)",fontSize:11,marginTop:-8,marginBottom:12,fontFamily:"'Syne',sans-serif"}}>Aparece como botão abaixo dos serviços</p>
+        <p style={{color:"rgba(140,40,120,0.4)",fontSize:11,marginTop:-8,marginBottom:12,fontFamily:"'Cormorant Garamond',sans-serif"}}>Aparece como botão abaixo dos serviços</p>
 
         <label style={S.lbl}>Atendimentos realizados <span style={{opacity:0.4}}>(opcional)</span></label>
         <div style={{display:"flex",gap:8,marginBottom:12,alignItems:"center"}}>
@@ -235,9 +235,9 @@ function Step3({onNext,onBack}){
     <BeamsBackground>
       <style>{GF}</style>
       <div style={S.page}><div style={S.card}>
-        <button onClick={onBack} style={{background:"none",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,color:"rgba(200,160,220,0.5)",padding:"8px 18px",fontSize:12,cursor:"pointer",marginBottom:24,letterSpacing:1,fontFamily:"'Syne',sans-serif"}}>← Voltar</button>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:12}}>Passo 3 de 3</p>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Estilo e contato</h2>
+        <button onClick={onBack} style={{background:"none",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,color:"rgba(200,160,220,0.5)",padding:"8px 18px",fontSize:12,cursor:"pointer",marginBottom:24,letterSpacing:1,fontFamily:"'Cormorant Garamond',sans-serif"}}>← Voltar</button>
+        <p style={{fontFamily:"'Cormorant Garamond',sans-serif",fontSize:11,letterSpacing:4,textTransform:"uppercase",color:"rgba(140,40,120,0.7)",marginBottom:12}}>Passo 3 de 3</p>
+        <h2 style={{fontFamily:"'Syne',sans-serif",fontSize:"clamp(26px,4vw,38px)",fontWeight:300,fontStyle:"italic",color:"#f0dcff",marginBottom:24,lineHeight:1.2}}>Estilo e contato</h2>
 
         <label style={{...S.lbl,marginBottom:10}}>Tom de comunicação *</label>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:16}}>
@@ -318,8 +318,8 @@ export default function Home(){
   if(step===3)return(
     <BeamsBackground>
       <style>{GF}</style>
-      <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:16,fontFamily:"'Syne',sans-serif"}}>
-        {loading&&<><div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:64,color:"rgba(140,40,120,0.6)"}}>✦</div><p style={{color:"#c080d0",fontSize:16,letterSpacing:2,textTransform:"uppercase"}}>Conjurando seu site...</p><p style={{color:"rgba(140,40,120,0.5)",fontSize:13,letterSpacing:1}}>Isso pode levar até 1 minuto</p></>}
+      <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:16,fontFamily:"'Cormorant Garamond',sans-serif"}}>
+        {loading&&<><div style={{fontFamily:"'Syne',sans-serif",fontSize:64,color:"rgba(140,40,120,0.6)"}}>✦</div><p style={{color:"#c080d0",fontSize:16,letterSpacing:2,textTransform:"uppercase"}}>Conjurando seu site...</p><p style={{color:"rgba(140,40,120,0.5)",fontSize:13,letterSpacing:1}}>Isso pode levar até 1 minuto</p></>}
         {!loading&&<Step3 onNext={handleStep3} onBack={()=>setStep(2)}/>}
         {error&&<div style={{position:"fixed",bottom:20,left:20,right:20,background:"rgba(120,10,40,0.9)",border:"1px solid rgba(180,40,80,0.5)",borderRadius:8,padding:"12px 16px",color:"#fca5a5",fontSize:14}}>⚠️ {error}</div>}
       </div>
@@ -331,7 +331,7 @@ export default function Home(){
     const fakesite={name:preview.form.name,profession:preview.form.profession,content:preview.content,theme:preview.theme,logo:preview.form.logo,gallery:preview.form.gallery,gallery_position:preview.form.gallery_position,profilePhoto:preview.form.profilePhoto,heroPhotoIndex:preview.form.heroPhotoIndex||0,socials:preview.form.socials,activeSocials:preview.form.activeSocials,servicesData:preview.form.servicesData,catalogLink:preview.form.catalogLink||""};
     return(
       <div style={{minHeight:"100vh",background:"#0a0208"}}>
-        <div style={{background:"rgba(10,2,8,0.95)",borderBottom:"1px solid rgba(140,40,120,0.2)",padding:"12px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:10,position:"sticky",top:0,zIndex:200,fontFamily:"'Syne',sans-serif"}}>
+        <div style={{background:"rgba(10,2,8,0.95)",borderBottom:"1px solid rgba(140,40,120,0.2)",padding:"12px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:10,position:"sticky",top:0,zIndex:200,fontFamily:"'Cormorant Garamond',sans-serif"}}>
           <div style={{display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}>
             <span style={{color:"#c080d0",fontWeight:500,letterSpacing:1,fontSize:13}}>✦ Prévia</span>
             {preview.form.logo&&<span style={{background:"rgba(140,40,120,0.1)",border:"1px solid rgba(140,40,120,0.3)",borderRadius:99,padding:"2px 10px",fontSize:11,color:"#c080d0"}}>✅ Logo</span>}
@@ -343,7 +343,7 @@ export default function Home(){
             <button style={{background:"linear-gradient(135deg,#7a1f68,#8c2878)",color:"#fff",border:"none",borderRadius:99,padding:"8px 24px",cursor:"pointer",fontSize:13,letterSpacing:1,opacity:loadingCO?0.7:1}} disabled={loadingCO} onClick={goCheckout}>{loadingCO?"Aguarde...":"✦ Publicar por R$197"}</button>
           </div>
         </div>
-        {error&&<div style={{background:"rgba(120,10,40,0.9)",color:"#fca5a5",padding:"10px 20px",fontSize:14,fontFamily:"'Syne',sans-serif"}}>⚠️ {error}</div>}
+        {error&&<div style={{background:"rgba(120,10,40,0.9)",color:"#fca5a5",padding:"10px 20px",fontSize:14,fontFamily:"'Cormorant Garamond',sans-serif"}}>⚠️ {error}</div>}
         <TemplateComp site={fakesite}/>
       </div>
     );
